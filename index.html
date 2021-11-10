@@ -1,18 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <title>Athlimage</title>
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="css/titleBar.css" />
+    <link rel="stylesheet" href="css/render.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/photoPackageTable.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <!-- Boxicons CDN Links -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet"/>
+    <script>
+      $(function(){
+        $(".table tr.view").on("click", function(){
+          $(this).toggleClass("open").next(".fold").toggleClass("open");
+        });
+      });
+    </script>
+    <script>
+      const handleClick = () => {
+        console.log("Kesav")
+      }
+
+    </script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    
+    
+    <!-- Buttons menu-->
+    <!-- Header  -->
+    <header>
+      <div id="menu-bar" class="head">
+          <div class="left toggle" id="active" role="menu">
+              <button class="toggleButton click" id="showHideMenus"><i class="fas fa-bars"></i></button>
+              <h4>Athlimage</h4>
+          </div>
+          <div class="right">
+              <button class="menubar-btn" id="minimize-btn"><i class="fas fa-window-minimize"></i></button>
+              <button class="menubar-btn" id="max-unmax-btn"><i class="far fa-square"></i></button>
+              <button class="menubar-btn" id="close-btn"><i class="fas fa-times"></i></button>
+          </div>
+      </div>
+    </header>
+    
+    <!-- Container Body -->
+    <div class="container">  
+      <!-- <div class="leftMenu" id="menu-btn"> -->
+        <nav class="leftMenu" id="menu-btn">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#" id="" class="nav-link">
+                <i class="fas fa-columns"></i>
+                <span class="link-text click">
+                  Package
+                </span>
+              </a>
+            </li>
+            <hr class="bar"></hr>
+             <!------------------------------------------------------------------------------------------->
+            <li class="nav-item">
+              <a href="#" id="" class="nav-link">
+                <!-- <i class="fas fa-columns"></i> -->
+                <i class='fas fa-cog' ></i>
+                <span class="link-text click">
+                  Settings
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-    <!-- You can also require other files to run in this process -->
+        
+
+      <!-- </div>     -->
+      <div class="contentPages">
+        <h6> <strong id='status'></strong></h6>
+        <div class="table-container">
+          <table id="myTable" class="table">
+              <thead>
+                  <tr>
+                      <th>Forfait</th>
+                      <th>Produit</th>
+                      <th>Format</th>
+                      <th>Photos</th>
+                      <th>&nbsp;</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="view">
+                        <a class="accordion-link" href="">
+                            <td data-label="Forfait">1</td>
+                            <td data-label="Produit">Double</td>
+                            <td data-label="Format">4X4</td>
+                            <td data-label="Photos">2</td>
+                            <td data-label="&nbsp;" >
+                                <i class="fas fa-angle-right" onclick=handleClick()></i>    
+                            </td>
+                        
+                        </a>   
+                  </tr>
+                  <tr class="fold">        
+                      <td  data-parent="#accordion" colspan="5">
+                        <div class="folder-content">
+                          <p>Details</p>
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>nom</th><th>prenom</th><th>adresse</th><th>ville</th><th>Pays</th><th>telephone</th><th>Livré</th><th>sender</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Sony</td>
+                                <td>13245</td>
+                                <td>John Doe</td>
+                                <td>064578</td>
+                                <td>A, 100%</td>
+                                <td class="cur">20000</td>
+                                <td class="cur">33000</td>
+                                <td class="cur">13000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <!-- <h1 class="heading">Listes des forfaits</h1> -->
+    </div>
     <script src="./renderer.js"></script>
   </body>
-</html>
+</html> 

@@ -1,0 +1,19 @@
+.container {
+    height: calc(100vh - 30px);
+    background:#182029;
+    color: #44454e;
+    display: flex;
+    justify-content:center;
+    align-items: flex;
+    font-size: 2em;
+    margin: 0;
+    position: absolute;
+}
+
+.container > .contentPages {
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
