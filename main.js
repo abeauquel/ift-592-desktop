@@ -108,8 +108,8 @@ listenerRFCOMM = function(val) {
   if(newAction){
     if(newAction.action === 'create'){
       let newCommand = command.serializeCommand(val);
-      win.webContents.send('listener-command', newCommand);
-      console.log(storeCommand.createCommand(newCommand));
+      let listCommands = storeCommand.createCommand(newCommand);
+      win.webContents.send('listener-command', listCommands[listCommands.length - 1]);
     }
 
     if(newAction.action === 'update'){
