@@ -1,12 +1,14 @@
+*.swp
+
+*.dvi
+
+*.toc
+
+*.pdf
+
+*.log
 
 .idea/
 
 *.swp
 
-rapport.aux
-
-rapport.dvi
-
-rapport.log
-
-rapport.toc
