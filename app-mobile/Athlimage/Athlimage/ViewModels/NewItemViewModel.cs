@@ -60,6 +60,21 @@ namespace Athlimage.ViewModels
 
         }
 
+        public bool Connecte
+        {
+            get => connected();
+            set
+            {
+                SetProperty(ref connecte, value);
+            }
+        }
+
+        private bool connected()
+        {
+            bluetooth = Bluetooth.GetBluetooth();
+            return !bluetooth.isConnected();
+        }
+
         private bool ValidateSave()
         {
             missingValue();

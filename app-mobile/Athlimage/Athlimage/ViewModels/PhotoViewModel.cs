@@ -105,7 +105,8 @@ namespace Athlimage.ViewModels
         private bool connected()
         {
             bluetooth = Bluetooth.GetBluetooth();
-            return !bluetooth.isConnected();
+            bool response = !bluetooth.isConnected();
+            return response;
         }
 
         public Dossier SelectedDossier

@@ -36,7 +36,15 @@ namespace Athlimage.Views
             bluetooth = Bluetooth.GetBluetooth();
             string selectedItem = e.Item as string;
             string mac = selectedItem.Substring(selectedItem.IndexOf(':') + 1);
-            bluetooth_response.Text = bluetooth.connect(mac).ToString();
+            string connected = bluetooth.connect(mac).ToString();
+            if(connected == "True")
+            {
+                bluetooth_response.Text = "Connected";
+            }
+            else
+            {
+                bluetooth_response.Text = "Not connected";
+            }
 
         }
 
