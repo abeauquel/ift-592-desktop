@@ -109,7 +109,7 @@ function createWindow () {
   }, 75)
 
 
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
 
   load.loadApp(loadingScreen, win)
   state.manage(win)
