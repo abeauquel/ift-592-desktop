@@ -58,6 +58,7 @@ namespace Athlimage.ViewModels
                 Items.Clear();
                 String json = "{\"sender\":\"phone\",\"receiver\":\"desktop\",\"action\":\"getcommands\"}";
                 String temp;
+                List<string> data = new List<string>();
                 var items = await DataStore.GetItemsAsync(true);
                 if(firstTime)
                 {
@@ -66,7 +67,7 @@ namespace Athlimage.ViewModels
                 {
                     bluetooth = Bluetooth.GetBluetooth();
                     json = bluetooth.sendData(json);
-                    //json = bluetooth.getListCommande();
+                    //json = await bluetooth.getListCommande();
                     //json = json.Substring(json.IndexOf('\n') + 1);
                     var text = 0;
                 }

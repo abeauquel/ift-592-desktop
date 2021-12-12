@@ -14,7 +14,6 @@ namespace Athlimage.Droid
         private string listCommandAction = "sendcommands";
         private string pictureCommandAction = "sendimage";
         private string listSendCommandAction = "getcommands";
-        private string pictureSendCommandAction = "getimage";
 
         public static BluetoothService GetBluetoothService()
         {
@@ -34,32 +33,28 @@ namespace Athlimage.Droid
             string response = "";
             string action = "";
             int timeout = 0;
-            bool responseNeeded = false;
             if (message.Contains(listSendCommandAction))
             {
                 action = listCommandAction;
                 timeout = 500;
-                responseNeeded = true;
-            } else if(message.Contains(pictureSendCommandAction))
+            } else
             {
                 action = pictureCommandAction;
                 timeout = 2000;
-                //responseNeeded = true;
             }
-           Altimage.Bluetooth.BluetoothLib.SendBluetoothData(message);
-            if(responseNeeded)
+            while(response == "")
             {
-                while (response == "")
+                Altimage.Bluetooth.BluetoothLib.SendBluetoothData(message);
+                Thread.Sleep(timeout);
+                response = getResponse(action);
+                if(response == "")
                 {
-                    Thread.Sleep(timeout);
-                    response = getResponse(action);
-                    if (response == "")
-                    {
-                        continue;
-                    }
-                    response = parseMessage(response, action);
+                    continue;
                 }
-            }                 
+                response = parseMessage(response, action);
+            }
+            
+             
             return response;
         }
 

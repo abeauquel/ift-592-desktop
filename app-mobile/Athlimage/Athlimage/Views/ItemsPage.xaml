@@ -9,7 +9,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="icon_plus" Command="{Binding AddItemCommand}" />
-        <ToolbarItem IconImageSource="icon_parametre" Command="{Binding LoadItemsCommand}" />
+        <ToolbarItem IconImageSource="icon_refresh" Command="{Binding LoadItemsCommand}" />
     </ContentPage.ToolbarItems>
 
     <!--
