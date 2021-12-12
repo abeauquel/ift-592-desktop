@@ -65,7 +65,7 @@ namespace Athlimage.ViewModels
                     firstTime = false;
                 } else
                 {
-                    bluetooth = Bluetooth.GetBluetooth();
+                    //bluetooth = Bluetooth.GetBluetooth();
                     json = bluetooth.sendData(json);
                     //json = await bluetooth.getListCommande();
                     //json = json.Substring(json.IndexOf('\n') + 1);
@@ -75,9 +75,14 @@ namespace Athlimage.ViewModels
                 ListeCommande list = Newtonsoft.Json.JsonConvert.DeserializeObject<ListeCommande>(json);
                 foreach (var item in list.values)
                 {
-                    item.toItem();
-                    Items.Add(item.toItem());
+                    var currentItem = item.toItem();
+                    Items.Add(currentItem);
+                    await DataStore.UpdateItemAsync(currentItem);
                 }
+                //foreach (var item in items)
+                //{
+                //    Items.Add(item);
+                //}
             }
              catch (Exception ex)
             {
