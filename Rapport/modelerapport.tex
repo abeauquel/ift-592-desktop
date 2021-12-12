@@ -1,0 +1,150 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{array}
+\usepackage{color}
+\usepackage{calc}
+\usepackage{color,linegoal}
+\usepackage{titling}
+\setlength{\droptitle}{-2.8cm}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\unitlength}{1mm}
+\setlength{\topmargin}{-14mm}%24
+\setlength{\oddsidemargin}{-0.0001in}% 1mm
+\setlength{\parskip}{1mm}
+\newcommand{\GG}{\guillemotleft\xspace}
+\newcommand{\GD}{\guillemotright\xspace}
+\newcommand{\CT}[1]{\GG~{#1}~\GD\xspace}
+
+
+
+\definecolor{lightgray}{gray}{0.90}
+\definecolor{SolutionColor}{gray}{0.85}
+
+\begin{document}
+
+\def\always{{\vcenter{\vbox{\hrule height.4pt
+                   \hbox{\vrule width.4pt height9pt \kern9pt
+                         \vrule width.4pt}
+                         \hrule height.4pt}}}}
+
+\def\undertext#1{$\underline{\hbox{#1}}$}
+
+%\def\postscript#1#2#3{\vbox to #3{\hbox to #2{\special{psfile=#1}}}}
+%\def\boxit#1{\vtop{\hrule\hbox{\vrule\vbox{#1}\vrule}\hrule}}
+%\def\box#1{\vtop{\hbox{\vbox{#1}}}}
+
+\bibliographystyle{plain}
+
+
+\begin{center}
+{\bf\LARGE    Athlimage }
+\vspace{1cm}
+
+par
+\vspace{1cm}
+
+Dordor Minetdi 
+
+Alexandre Beauquel 
+
+Alexandre Roussel 
+
+Sébastien O'Neel
+
+\vspace{1cm}
+{\large Travail présenté à
+
+Gabriel Girard
+
+\vspace{0.5cm}
+
+ dans le cadre de l'activité pédagogique
+ \vspace{0.3cm}
+
+
+{\bf IFT592 - Projet d'informatique I}
+
+
+\vspace{1cm}
+
+
+D\'EPARTEMENT D'INFORMATIQUE
+
+UNIVERSIT\'E DE SHERBROOKE
+
+\vspace{0.5cm}
+
+
+Date}
+
+\end{center}
+
+\newpage
+
+\renewcommand{\baselinestretch}{1.2}
+\normalsize
+
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+
+L'introduction présente d’abord clairement le thème du projet et fait une mise en contexte. En particulier, elle énonce la pertinence du sujet en rapport avec votre formation et situe ce projet par rapport à ce qui existe (si pertinent).
+
+Puis, les objectifs généraux et spécifiques du projet fixés au début du projet sont exprimés clairement. Parler de l'atteinte ou non des objectifs. En plus des objectifs, parler des livrables qui avaient été fixés au début du projet.
+
+S’il y a lieu, la méthodologie utilisée est décrite.
+
+
+\section{Revue de la littérature}
+
+Cette section fait une revue des documents que vous avez consulté qui traitent du même sujet ou qui ont servi de base à votre sujet.  Tous ces documents doivent être cités dans le texte et se retrouver dans la bibliographie.
+
+Si pertinent, elle fait aussi une revue des systèmes similaires à celui que vous avez conçu.  Vous devez justifier l'utilisation ou la non-utilisation de ces systèmes pour concevoir le vôtre.
+
+Ainsi, plusieurs documents\cite{FirstNas} ont servi pour mes travaux.
+
+\section{Sections 3, 4, 5, ...}
+
+Les sections suivantes contiennent le corps du projet. Celui-ci est divisé en sections qui elles-mêmes sont divisées
+en sous-sections.
+
+
+Ces sections présentent :
+
+\begin{itemize}
+\item une introduction au sujet traité si cela est nécessaire;
+\item les technologies utilisées avec justification;
+\item la documentation technique (spécifications, architecture, conception);
+\item la documentation pour l'utilisation (compilation, installation, interface, API, utilisation);
+\item les tests effectuées et les résultats obtenus;
+\item Une analyse des résultats si cela est pertinent.
+\end{itemize}
+
+
+
+\section{Conclusion}
+
+La conclusion effectue un retour sur son travail. Expliquez les problèmes rencontrés lors de la réalisation de votre projet. Il est souhaitable de mentionner les perspectives de développements futurs.
+
+\section{Annexes}
+
+Ces sections sont optionnelles.  On met ici tout ce qui est trop lourd pour être intégré dans le texte.  On peut y mettre par exemple, des bouts de code ou d'algorithme qui sont trop long pour le texte. On peut y mettre le mandat original ainsi que les documents produits en cours de projets.
+
+
+\section{Bibliographie}
+\vspace{-0.75cm}
+\renewcommand\refname{}
+
+\bibliographystyle{plain-fr}
+\bibliography{bibliographie}
+\nocite{*}
+
+
+\end{document}

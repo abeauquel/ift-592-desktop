@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>Athlimage</title>
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="css/titleBar.css" />
+    <link rel="stylesheet" href="css/render.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/photoPackageTable.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/toast.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/filter.css" />
+    <link rel="stylesheet" href="css/details.css" />
+    <link rel="stylesheet" href="./node_modules/js-datepicker/dist/datepicker.min.css">
+    <!-- Boxicons CDN Links -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet"/>
+    <!-- Pages links -->
+    <link rel="import" href="pages/packages.html">
+    <link rel="import" href="pages/settings.html">
+    <link rel="import" href="pages/Details.html">
+  </head>
+  <body>
+    
+    
+    <!-- Buttons menu-->
+    <!-- Header  -->
+    <header id="siteHeader">
+      <div id="menu-bar" class="">
+          <div class="left toggle" role="menu">
+              <button class="toggleButton click" id="showHideMenus"><i class="fas fa-bars"></i></button>
+              <!-- <img alt="" src="/icons/Athlimage-logo.png" height="100%" width="100%"/> -->
+              <img id="show-logo"></img>
+              <h4>Athlimage</h4>
+              <div class=""><i class="uil uil-times"></i></div>
+          </div>
+
+          <div class="center">
+            <label for="mydate">Date :</label>
+            <p style="padding-left: 14%; font-size: 100%;"  id="date"></p>
+          </div>    
+        
+          <div class="right">
+              <button class="menubar-btn" id="minimize-btn"><i class="fas fa-window-minimize"></i></button>
+              <button class="menubar-btn" id="max-unmax-btn"><i class="far fa-square"></i></button>
+              <button class="menubar-btn" id="close-btn"><i class="fas fa-times"></i></button>
+          </div>
+      </div>
+    </header> 
+    
+    <!-- Container Body -->
+    <div class="container">  
+      <!-- <div class="leftMenu" id="menu-btn"> -->
+        <nav class="leftMenu" id="menu-btn">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a id="packages-tab" class="nav-link active" data-toggle="pill" href="#packages" role="tab" aria-controls="packages" aria-selected="true">
+                  <i class="fas fa-columns"></i>
+                  <span class="link-text click">
+                    Commandes
+                  </span>
+                </a>
+              </li>
+              <!------------------------------------------------------------------------------------------->
+              <li class="nav-item">
+                <a id="setting-link-id" class="nav-link" data-toggle="pill" href="#settings" role="tab" aria-controls="settings" aria-selected="false">
+                  <!-- <i class="fas fa-columns"></i> -->
+                  <i class='fas fa-cog' ></i>
+                  <span class="link-text click">
+                    Options
+                  </span>
+                </a>
+              </li>
+              <!----------------------------->
+              
+            </ul>
+          </div>
+          <div id="status-connection" onclick="changeStatus()">
+            <p>&nbsp;</p>
+            <!-- <span class="link-text click">
+              
+            </span> -->
+          </div>
+        </nav>
+
+        
+
+      <!-- </div>     -->
+      <div id="pages" class="contentPages">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade currentPage show" id="packages" role="tabpanel" aria-labelledby="packages-tab"></div>
+          <div class="tab-pane fade " id="settings" role="tabpanel" aria-labelledby="settings-tab"></div> 
+        </div>
+      </div>
+
+
+      <div id="details-page">
+        <div style="display: inline-block;" id="mySidenav" class="sidenav">
+          <p style="top: 0;text-align: center;">Details</p>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <!-- <div class="tab-pane fade show active" id="details-id" role="tabpanel" aria-labelledby="packages-tab"></div> -->
+          <table >
+            <tbody id="details-data">
+             
+            </tbody>
+          </table>
+         
+        </div>
+      </div>
+      <!-- <div id="confirmationAlert">
+        <div id="box">
+          <div class="confirmationHeading">
+            confirm your decision
+          </div>
+          <div class="confirmContent">
+            <p>Would you want to confirm?</p>
+            <div id="buttonId">
+              <button id="confirmBtn" type="">confirm</button>
+              <button id="cancelBtn" type="">cancel</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+     
+      <!-- <h1 class="heading">Listes des forfaits</h1> -->
+    </div>
+    <script src="./renderer.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/details.js"></script>
+    <script type="text/javascript">
+      const {nativeImage} = require('electron')
+
+      n =  new Date();
+       y = n.getFullYear();
+       m = n.getMonth() + 1;
+       d = n.getDate();
+       document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+       
+       const image = nativeImage.createFromPath('./icons/Athlimage-logo.png')
+       let logoUrl = image.toDataURL();
+      document.getElementById('show-logo').src = logoUrl;
+        
+     </script>
+  </body>
+</html> 

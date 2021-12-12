@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="./../css/filter.css" />
+<template id="packages-id">
+  <div class="template" id="packages-template" data-tab="packages">
+    <h2 align="center" class="title">Commandes</h2>
+    <hr class="line">
+      
+      <div class="table-title">
+        <div class="row">
+            <div class="col-sm-6">
+             
+                <div class="btn-group" data-toggle="buttons" style="display: flex;">
+                    <div class="form__group field">
+                      <input 
+                      type="input" 
+                      id="myInput" 
+                      onkeyup="filter()" 
+                      class="form__field" 
+                      placeholder="filter" 
+                      name="filter" 
+                      required />
+                      <label for="filter" class="form__label">Filter</label>
+                    </div>
+<!--                    <label class="btn btn-info">-->
+<!--                        <input type="radio" name="status" value="all" checked="checked"> Non Traité-->
+<!--                    </label>-->
+<!--                    <label class="btn btn-success">-->
+<!--                        <input type="radio" name="status" value="active"> Traité-->
+<!--                    </label>    -->
+                </div>
+            </div>
+        </div>
+      </div>
+    <div class="table-container">
+      
+      <table id="package">
+        
+          <thead>
+            <tr class="header">
+                <th>Id</th>
+                <th>Forfait</th>
+                <th>Format</th>
+                <th>Photos</th>
+                <th>Client</th>
+                <th>Status</th>
+                <th>Changer status</th>
+            </tr>
+          </thead>
+          <tbody id="#tbody-commands">
+
+
+          </tbody>
+          <tfoot>
+            <tr class="header">
+              <th scope="row" colspan="5">Total commandes</th>
+              <th colspan="2" id="#nb-commands">0</th>
+            </tr>
+          </tfoot>
+      </table>
+    </div>
+      <div align="center" hidden="hidden">
+<!--      <div align="center" >-->
+          <input id="#test-connection" type="button" value="Simuler Connexion: true">
+          <input id="#test-command" type="button"  value="Simuler New Command">
+          <input id="#reload-commands" type="button"  value="Charger toutes les commandes">
+          <input id="#delete-commands" type="button"  value="Supprimer toutes les commandes">
+      </div>
+  </div>
+</template>

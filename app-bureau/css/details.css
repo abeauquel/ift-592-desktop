@@ -1,0 +1,144 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 30;
+  right: 0;
+  background-color: var(--nav-color);
+  overflow-x: hidden;
+  transition: 0.5s ease;
+  padding-top: 60px;
+}
+  
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: ease;
+}
+  
+.closeSidenav {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0s important!;
+}
+  
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#packages-template {
+  transition: margin-right .5s;
+  padding: 16px;
+}
+
+.detals-table {
+  padding: 5px, 
+}
+
+
+.DetailsButtons {
+  /* position: absolute; */
+  bottom: 5;
+  margin: 15px;
+  padding: 15px;
+  margin-left: 55px;
+  display: -webkit-inline-box;
+  width:100%;
+}
+
+.UpdateButton {
+  background-color: grey;
+  margin-top: 45px;
+}
+
+.ValidateButton {
+  background-color: green;
+  margin-top: 45px;
+}
+
+.cancelButton {
+  padding : 15px;
+  background-color: red;
+  margin: 15px;
+}
+
+#confirmationAlert {
+  /* display: None; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.5)
+}
+
+#box {
+  border-radius: 5px;
+  margin-top: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 500px;
+  text-align: center;
+  box-shadow: 2px 2px 8px black;
+}
+
+.confirmationHeading {
+  background-color: var(--thead-color);
+  color: var(--title-color);
+  font-size: medium;
+  padding: 5px;
+}
+
+.confirmContent {
+  /* margin-top: 30px; */
+  font-size: medium;
+  background-color: rgba(31, 84, 128, 0.85);
+  /* margin-bottom: -50px; */
+  height: 118px;
+  bottom: 0;
+}
+
+#buttonId {
+  display: inline-block;
+  width: 300px;
+  bottom: 450px;
+}
+
+#confirmBtn, #cancelBtn {
+  height: 25px;
+  width: 80px;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 5px;
+}
+
+#confirmBtn {
+  background-color: green;
+  margin-left: 20px;
+  padding-right: 5px;
+}
+
+#cancelBtn {
+  background-color: red;
+  margin-right: 20px;
+  padding-left: 5px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FLOATING LOADING SCREEN</title>
+    <link rel="stylesheet" href="../css/titleBar.css" />
+    <link rel="stylesheet" href="../css/render.css" />
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="stylesheet" href="../css/photoPackageTable.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/icons.css" />
+    <link rel="stylesheet" href="../css/settings.css" />
+    <import href=""></import>
+    <style>
+      /* Define the main wrapper style */
+      .LoaderWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+
+        box-sizing: border-box;
+        background-color: transparent;
+      }
+
+      .LoaderContent {
+        color: rgba(red, green, blue, 0);
+        size: 100%;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        padding: 0 15px;
+        border: none;
+        background: transparent;
+        outline: none;
+        display: block;
+        /* filter : hue-rotate(180deg); */
+      }      
+    </style>
+  </head>
+  <body>
+    <div class="LoaderWrapper">
+      <div class="LoaderContent">
+        <img src ="../icons/Athlimage-logo.png" id="loading"></img>
+           
+      </div>
+    </div>
+
+    <script>
+      // You can also require other files to run in this process
+    //   require('./renderer.js');
+      window.$ = window.jquery = require("jquery");
+      window.popper = require("popper.js");
+      require('./renderer.js');
+
+      const {nativeImage} = require('electron')
+      const image = nativeImage.createFromPath('.././icons/Athlimage-logo.png')
+      let logoUrl = image.toDataURL();
+      document.getElementById('loading').src = logoUrl;
+    </script>
+  </body>
+</html>

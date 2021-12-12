@@ -1,0 +1,53 @@
+<template id="settings-id">
+    <div class="template" id="settings-template" data-tab="settings">
+
+        <h2 align="center" class="title">Settings</h2>
+        <hr class="line">
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- <th>&nbsp;</th>
+                        <th>&nbsp;</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+                        <td >
+                            <p size="5px">Change Theme <strong id="device-name"></strong></p>
+                        </td>
+                        <td  >
+                            <p size="5px"><i style="text-align:left" class="fas fa-moon" id="dark-light-event"></i></p>
+                        </td>
+                        <td  >
+                            <i class="fas fa-toggle-off" id="dark-light-event-on"></i>
+                        </td>
+                    </tr>
+                    <tr class="accordion-toggle collapsed" id="accordion1" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+                        <td  >
+                            <p size="5px">Bluetooth Settings <strong id="device-name"></strong></p>
+                        </td>
+                        <td  >
+                            <p size="5px">Currently selected bluetooth device: <strong id="device-name"></strong></p>
+                        </td>
+                        <td  >
+                            <p size="5px">XBOX <strong id="device-name"></strong></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <script>
+        const dark_light_trigger = document.getElementById('dark-light-event');  
+        const dark_light_trigger_on = document.getElementById('dark-light-event-on');
+        dark_light_trigger_on.addEventListener('click', ()=>{
+            document.body.classList.toggle('dark-colors');
+            dark_light_trigger.classList.toggle('fa-sun');
+            dark_light_trigger_on.classList.toggle('fa-toggle-on');
+            // dark_light_trigger.classList.toggle('fa-toggle-on');
+        })
+    </script>
+</template>

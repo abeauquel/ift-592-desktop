@@ -1,0 +1,42 @@
+:root {
+    --content-color: #909ca7;
+    --nav-color: #d1d5da;
+    --title-color: #17202A;
+    --shadow-first-color: #7d8892;
+    --content-text-color: #44454e;
+    /**/
+    --link-color-hover:#a0a0a7;
+    --link-color-focus:#b6b6c0;
+    --thead-color:rgb(165, 164, 164);
+    --td-hover-color:rgba(0, 0, 0, 1);
+    --td-hover-background-color: #b3b3b3;
+    --th-child-even-color:#acadb9;
+    --th-child-odd-color:#cbd3d4;
+    --line-color: #747a80;
+    --border-color: #151616;
+}
+
+body.dark-colors {
+    --content-color: #1d1d1f;
+    --nav-color: #2d2f31;
+    --title-color: #e4e4e4;
+    --shadow-first-color: #121213;
+    --content-text-color: #d1d2db;
+    /**/
+    --dark-light: var(--title-color);
+    --link-color-hover:#58585a;
+    --link-color-focus:#47474b;
+    --thead-color:rgb(25, 34, 44);
+    --td-hover-color:rgb(255, 253, 253);
+    --td-hover-background-color: #555555;
+    --th-child-even-color:#05060f;
+    --th-child-odd-color:#202127;
+    --line-color: #000000;
+    --border-color: #dddddd;
+}
+
+#dark-light-event{
+    position: absolute;
+    text-align: center;
+    right: 50px
+}
