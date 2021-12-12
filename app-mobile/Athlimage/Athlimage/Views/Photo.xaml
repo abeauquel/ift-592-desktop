@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Athlimage.Views.Photo"
+             xmlns:vm="clr-namespace:Athlimage.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:PhotoViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">red</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout>
+            <Label TextColor="White" BackgroundColor="red" HorizontalTextAlignment="Center" IsVisible="{Binding Connecte}">L'appareil n'est pas connecté!!!!</Label>
+            <Image Source="{Binding Photo}"/>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

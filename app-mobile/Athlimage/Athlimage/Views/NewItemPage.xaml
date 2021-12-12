@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Athlimage.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ScrollView x:Name="scrollview">
+        <StackLayout>
+            <Label TextColor="White" BackgroundColor="red" HorizontalTextAlignment="Center" IsVisible="{Binding Connecte}">L'appareil n'est pas connecté!!!!</Label>
+            <Frame>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label HeightRequest="30" VerticalOptions="EndAndExpand" Grid.Row="0" Grid.Column="0" FontSize="Medium" HorizontalOptions="CenterAndExpand">Forfait</Label>
+                    <Frame Grid.Row="1" Grid.Column="0">
+                        <Picker x:Name="ForfaitPicker" SelectedItem="{Binding Forfait, Mode=TwoWay}" SelectedIndexChanged="Picker_SelectedIndexChanged" ItemDisplayBinding="{Binding ListeForfait}">
+                            <Picker.Items>
+                                <x:String>Simple</x:String>
+                                <x:String>Triple</x:String>
+                                <x:String>Groupe</x:String>
+                                <x:String>Poster</x:String>
+                                <x:String>Cartes</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+                    <Label TextColor="Red" IsVisible="{Binding ForfaitValide}">Le champ forfait est requis</Label>
+                    <Label HeightRequest="30" VerticalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1" FontSize="Medium" HorizontalOptions="CenterAndExpand">Format</Label>
+                    <Frame Grid.Row="1" Grid.Column="1">
+                        <Picker x:Name="ListeFormat" SelectedItem="{Binding Format, Mode=TwoWay}"></Picker>
+                    </Frame>
+                </Grid>
+            </Frame>
+            <Frame>
+                <StackLayout x:Name="layoutPhoto">
+                    <Label x:Name="photo1lb"  Text="Photo 1" FontSize="Medium" IsVisible="True"/>
+                    <Frame x:Name="photo1fr"><Entry x:Name="photo1en" Text="{Binding Photo1, Mode=TwoWay}" FontSize="Medium" /></Frame>
+                    <Label TextColor="Red" IsVisible="{Binding Photo1Valide}">Le champ photo 1 est requis</Label>
+                    <Label x:Name="photo2lb" Text="Photo 2" FontSize="Medium" IsVisible="True"/>
+                    <Frame x:Name="photo2fr"><Entry x:Name="photo2en" Text="{Binding Photo2, Mode=TwoWay}" FontSize="Medium" /></Frame>
+                    <Label TextColor="Red" IsVisible="{Binding Photo2Valide}">Le champ photo 2 est requis</Label>
+                    <Label x:Name="photo3lb" Text="Photo 3" FontSize="Medium" IsVisible="True"/>
+                    <Frame x:Name="photo3fr"><Entry x:Name="photo3en" Text="{Binding Photo3, Mode=TwoWay}" FontSize="Medium" /></Frame>
+                    <Label TextColor="Red" IsVisible="{Binding Photo3Valide}">Le champ photo 3 est requis</Label>
+                </StackLayout>
+            </Frame>
+            <Frame IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                <StackLayout>
+                    <Label x:Name="prenomlb" Text="Prenom" FontSize="Medium" IsVisible="{Binding AdresseVisible, Mode=TwoWay}"/>
+                    <Frame IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                        <Entry x:Name="prenomen" Text="{Binding Prenom, Mode=TwoWay}" IsVisible="{Binding AdresseVisible, Mode=TwoWay}" FontSize="Medium" />
+                    </Frame>
+                    <Label TextColor="Red" IsVisible="{Binding PrenomValide}">Le champ prenom est requis</Label>
+                    <Label x:Name="nomlb" Text="Nom" FontSize="Medium" IsVisible="{Binding AdresseVisible, Mode=TwoWay}"/>
+                    <Frame IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                        <Entry x:Name="nomen" Text="{Binding Nom, Mode=TwoWay}" IsVisible="{Binding AdresseVisible, Mode=TwoWay}" FontSize="Medium" />
+                    </Frame>
+                    <Label TextColor="Red" IsVisible="{Binding NomValide}">Le champ nom est requis</Label>
+                    <Label x:Name="adresselb" Text="Adresse" FontSize="Medium" IsVisible="{Binding AdresseVisible, Mode=TwoWay}"/>
+                    <Frame IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                        <Entry x:Name="adresseen" Text="{Binding Adresse, Mode=TwoWay}" IsVisible="{Binding AdresseVisible, Mode=TwoWay}" FontSize="Medium" />
+                    </Frame>
+                    <Label TextColor="Red" IsVisible="{Binding AdresseValide}">Le champ adresse est requis</Label>
+                    <Label x:Name="villelb" Text="Ville" FontSize="Medium" IsVisible="{Binding AdresseVisible, Mode=TwoWay}"/>
+                    <Frame IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                        <Entry x:Name="villeen" Text="{Binding Ville, Mode=TwoWay}" IsVisible="{Binding AdresseVisible, Mode=TwoWay}" FontSize="Medium" />
+                    </Frame>
+                    <Label TextColor="Red" IsVisible="{Binding VilleValide}">Le champ ville est requis</Label>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="payslb" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Text="Pays" FontSize="Medium" IsVisible="{Binding AdresseVisible, Mode=TwoWay}"/>
+                        <Frame Grid.Row="1" Grid.Column="0" IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                            <Picker x:Name="paysen" SelectedIndexChanged="Picker2_SelectedIndexChanged" SelectedItem="{Binding Pays, Mode=TwoWay}" IsVisible="{Binding AdresseVisible, Mode=TwoWay}" FontSize="Medium">
+                                <Picker.Items>
+                                    <x:String>CA</x:String>
+                                    <x:String>US</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
+                        <Label TextColor="Red" IsVisible="{Binding PaysValide}">Le champ pays est requis</Label>
+                        <Label VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="1" x:Name="provincelb" Text="Province" FontSize="Medium" IsVisible="{Binding AdresseVisible, Mode=TwoWay}"/>
+                        <Frame Grid.Row="1" Grid.Column="1" IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                            <Picker x:Name="provinceen"  SelectedItem="{Binding Province, Mode=TwoWay}" IsVisible="{Binding AdresseVisible, Mode=TwoWay}" FontSize="Medium" />
+                        </Frame>
+                    </Grid>
+                    <Label x:Name="codeplb" Text="Code Postale" FontSize="Medium" IsVisible="{Binding AdresseVisible, Mode=TwoWay}"/>
+                    <Frame IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                        <Entry x:Name="codepen" Text="{Binding CodePostale, Mode=TwoWay}" IsVisible="{Binding AdresseVisible, Mode=TwoWay}" FontSize="Medium" />
+                    </Frame>
+                    <Label TextColor="Red" IsVisible="{Binding CodePValide}">Le code postale n'est pas valide</Label>
+                    <Label x:Name="telelb" Text="Telephone" FontSize="Medium" IsVisible="{Binding AdresseVisible, Mode=TwoWay}"/>
+                    <Frame IsVisible="{Binding AdresseVisible, Mode=TwoWay}">
+                        <Entry x:Name="teleen" Text="{Binding Telephone, Mode=TwoWay}" IsVisible="{Binding AdresseVisible, Mode=TwoWay}" FontSize="Medium" />
+                    </Frame>
+                    <Label TextColor="Red" IsVisible="{Binding TelephoneValide}">Le champ prenom est requis</Label>
+                </StackLayout>
+            </Frame>
+            <Grid>
+                <Button x:Name="buttonAdresse" Grid.Column="0" Text="{Binding AfficherAdresse}" Command="{Binding AdresseCommand}"></Button>
+                <Button Grid.Column="1" Text="Adresse Précédente"></Button>
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

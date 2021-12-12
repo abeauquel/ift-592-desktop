@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Athlimage.Views.Parametre"
+             xmlns:vm="clr-namespace:Athlimage.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:Parametre />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">White</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label TextColor="White" BackgroundColor="red" HorizontalTextAlignment="Center" IsVisible="{Binding Connecte}">L'appareil n'est pas connecté!!!!</Label>
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+            <Label Grid.Row="2" Grid.Column="0">Page Parametre</Label>
+            <StackLayout Orientation="Vertical">
+            <Label x:Name="bluetooth_response" Text="Bluetooth response"/>
+            <Button x:Name="ScanButton"
+                    Margin="10"
+                    Clicked="ScanButton_Clicked"
+                    Text="Scan" />
+            <ListView x:Name="foundBleDevicesListView"
+                      Footer=""
+                      ItemTapped="FoundBluetoothDevicesListView_ItemTapped" />
+            <Entry x:Name="send_text" Text="Hello from android" />
+            <Button x:Name="read_button"
+                    Margin="10"
+                    Clicked="ReadButton_Clicked"
+                    Text="Read data" />
+            <Button x:Name="connected_button"
+                    Margin="10"
+                    Clicked="ConnectedButton_Clicked"
+                    Text="is Connected" />
+            <Button x:Name="send_button"
+                    Margin="10"
+                    Clicked="SendButton_Clicked"
+                    Text="send text" />
+            <Button Text="Status" Clicked="status" Margin="10"/>
+            <Button x:Name="disconnect_button"
+                    Margin="10"
+                    Clicked="DisconnectButton_Clicked"
+                    Text="disconnect" />
+            <Image Source="imageTest"
+                       x:Name="image_test"/>
+
+        </StackLayout>
+    </Grid>
+    </StackLayout>
+
+</ContentPage>
